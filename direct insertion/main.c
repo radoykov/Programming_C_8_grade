@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define n 100
+
+int main()
+{
+     int a[n], b;
+
+    do
+    {
+        printf("\nb=");
+        scanf("%d", &b);
+
+    }while(b<1 || b>n);
+
+    for(int i=0; i<b; i++)
+    {
+        printf("\nnumber=");
+        scanf("%d", &a[i]);
+    }
+    int c;
+    for(int i=1; i<b; i++)
+    {
+        int j;
+        c=a[i];
+
+        for( j=i-1; j>=0; j--)
+        {
+            if(a[j]>c)
+            {
+                a[j+1]=a[j];
+            }
+
+            else break;
+        }
+        a[j+1]=c;
+    }
+
+    for(int i=0; i<b; i++)
+    {
+        printf("%d ", a[i]);
+    }
+
+    return 0;
+}
